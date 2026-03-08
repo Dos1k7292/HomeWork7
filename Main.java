@@ -1,7 +1,5 @@
 import java.util.*;
 
-/* ================= COMMAND PATTERN ================= */
-
 interface Command{
     void execute();
     void undo();
@@ -69,8 +67,6 @@ class Invoker{
     }
 }
 
-/* ================= TEMPLATE METHOD ================= */
-
 abstract class Beverage{
 
     final void prepare(){
@@ -110,8 +106,6 @@ class Coffee extends Beverage{
         return a.equalsIgnoreCase("yes");
     }
 }
-
-/* ================= MEDIATOR PATTERN ================= */
 
 interface Mediator{
     void send(String msg, User sender);
@@ -165,13 +159,9 @@ class ChatUser extends User{
     }
 }
 
-/* ================= MAIN ================= */
-
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("=== COMMAND PATTERN ===");
 
         Light light = new Light();
         Door door = new Door();
@@ -185,8 +175,6 @@ public class Main {
 
         remote.undo();
 
-        System.out.println("\n=== TEMPLATE METHOD ===");
-
         Beverage tea = new Tea();
         tea.prepare();
 
@@ -194,8 +182,6 @@ public class Main {
 
         Beverage coffee = new Coffee();
         coffee.prepare();
-
-        System.out.println("\n=== MEDIATOR ===");
 
         ChatRoom chat = new ChatRoom();
 
